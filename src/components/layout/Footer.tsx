@@ -20,17 +20,17 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
-                <Link href="/recipes" className="hover:text-blue-600">
+                <Link href="/recipes" className="hover:text-orange-600">
                   Browse Recipes
                 </Link>
               </li>
               <li>
-                <Link href="/recipes?sort=popular" className="hover:text-blue-600">
+                <Link href="/recipes?sort=popular" className="hover:text-orange-600">
                   Popular
                 </Link>
               </li>
               <li>
-                <Link href="/recipes?sort=newest" className="hover:text-blue-600">
+                <Link href="/recipes?sort=newest" className="hover:text-orange-600">
                   Latest
                 </Link>
               </li>
@@ -43,12 +43,12 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
-                <Link href="/about" className="hover:text-blue-600">
+                <Link href="/about" className="hover:text-orange-600">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-blue-600">
+                <Link href="/blog" className="hover:text-orange-600">
                   Blog
                 </Link>
               </li>
@@ -59,12 +59,12 @@ export function Footer() {
             <h4 className="text-sm font-semibold text-gray-900 mb-3">Legal</h4>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
-                <Link href="/privacy" className="hover:text-blue-600">
+                <Link href="/privacy" className="hover:text-orange-600">
                   Privacy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-blue-600">
+                <Link href="/terms" className="hover:text-orange-600">
                   Terms
                 </Link>
               </li>

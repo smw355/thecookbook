@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   description:
     'Create amazing recipes with AI and share them with the world. Browse thousands of recipes created by our community.',
   keywords: ['recipes', 'cooking', 'AI', 'food', 'cookbook'],
+  icons: {
+    icon: '/logos/TheCookbookIcon.png',
+    apple: '/logos/TheCookbookIcon.png',
+  },
 };
 
 export default function RootLayout({

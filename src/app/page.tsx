@@ -8,7 +8,7 @@ export default function Home() {
         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
           Create Amazing Recipes
           <br />
-          <span className="text-blue-600">with AI</span>
+          <span className="text-orange-600">with AI</span>
         </h1>
 
         <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -30,27 +30,27 @@ export default function Home() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mt-16">
-          <div className="bg-white p-6 rounded-lg border border-gray-200">
+          <div className="bg-white p-6 rounded-lg border border-orange-200 hover:border-orange-300 transition-colors">
             <div className="text-4xl mb-4">🤖</div>
-            <h3 className="text-xl font-semibold mb-2">AI-Powered</h3>
+            <h3 className="text-xl font-semibold mb-2 text-orange-900">AI-Powered</h3>
             <p className="text-gray-600">
               Chat with Gemini to create custom recipes tailored to your taste
               and dietary needs.
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg border border-gray-200">
+          <div className="bg-white p-6 rounded-lg border border-orange-200 hover:border-orange-300 transition-colors">
             <div className="text-4xl mb-4">📖</div>
-            <h3 className="text-xl font-semibold mb-2">Personal Cookbook</h3>
+            <h3 className="text-xl font-semibold mb-2 text-orange-900">Personal Cookbook</h3>
             <p className="text-gray-600">
               Save your favorite recipes to your personal cookbook and access
               them anytime.
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg border border-gray-200">
+          <div className="bg-white p-6 rounded-lg border border-orange-200 hover:border-orange-300 transition-colors">
             <div className="text-4xl mb-4">🌍</div>
-            <h3 className="text-xl font-semibold mb-2">Share & Discover</h3>
+            <h3 className="text-xl font-semibold mb-2 text-orange-900">Share & Discover</h3>
             <p className="text-gray-600">
               Share your recipes with the community and discover amazing dishes
               from around the world.

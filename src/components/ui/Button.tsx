@@ -16,13 +16,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
           'disabled:opacity-50 disabled:pointer-events-none',
           {
-            'bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-600':
+            'bg-orange-600 text-white hover:bg-orange-700 focus-visible:ring-orange-600':
               variant === 'primary',
             'bg-gray-200 text-gray-900 hover:bg-gray-300 focus-visible:ring-gray-400':
               variant === 'secondary',
-            'border border-gray-300 bg-transparent hover:bg-gray-100 focus-visible:ring-gray-400':
+            'border border-orange-300 bg-transparent hover:bg-orange-50 focus-visible:ring-orange-400':
               variant === 'outline',
-            'hover:bg-gray-100 focus-visible:ring-gray-400': variant === 'ghost',
+            'hover:bg-orange-50 focus-visible:ring-orange-400': variant === 'ghost',
           },
           {
             'h-8 px-3 text-sm': size === 'sm',
