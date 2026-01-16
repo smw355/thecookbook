@@ -39,20 +39,6 @@
         { "fieldPath": "isPublic", "order": "ASCENDING" },
         { "fieldPath": "stats.views", "order": "DESCENDING" }
       ]
-    },
-    {
-      "collectionGroup": "ingredients",
-      "queryScope": "COLLECTION_GROUP",
-      "fields": [
-        { "fieldPath": "order", "order": "ASCENDING" }
-      ]
-    },
-    {
-      "collectionGroup": "instructions",
-      "queryScope": "COLLECTION_GROUP",
-      "fields": [
-        { "fieldPath": "order", "order": "ASCENDING" }
-      ]
     }
   ],
   "fieldOverrides": []
