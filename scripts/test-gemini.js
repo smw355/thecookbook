@@ -20,10 +20,10 @@ async function testGemini() {
 
   const genAI = new GoogleGenerativeAI(apiKey);
 
-  // Try gemini-1.5-flash-latest with full error
+  // Try gemini-2.0-flash-exp with full error
   try {
-    console.log(`\nTrying model: gemini-1.5-flash-latest`);
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash-latest' });
+    console.log(`\nTrying model: gemini-2.0-flash-exp`);
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
     const result = await model.generateContent('Say hello');
     const response = await result.response;
     const text = response.text();

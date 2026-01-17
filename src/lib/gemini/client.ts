@@ -10,7 +10,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 // Gemini Pro for recipe generation
 // Note: systemInstruction not supported in v1beta, will prepend to first message instead
 export const recipeModel = genAI.getGenerativeModel({
-  model: 'gemini-pro',
+  model: 'gemini-2.0-flash-exp',
   generationConfig: {
     temperature: 0.9,
     topP: 0.95,
@@ -20,7 +20,7 @@ export const recipeModel = genAI.getGenerativeModel({
 
 // Gemini 1.5 Flash for quick tasks
 export const flashModel = genAI.getGenerativeModel({
-  model: 'gemini-pro',
+  model: 'gemini-2.0-flash-exp',
   generationConfig: {
     temperature: 0.7,
     topP: 0.9,
