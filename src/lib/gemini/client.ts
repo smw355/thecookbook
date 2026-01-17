@@ -1,4 +1,5 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { RECIPE_SYSTEM_PROMPT } from './prompts';
 
 if (!process.env.GEMINI_API_KEY) {
   throw new Error('GEMINI_API_KEY is not defined in environment variables');
@@ -6,9 +7,10 @@ if (!process.env.GEMINI_API_KEY) {
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-// Gemini 1.5 Pro for recipe generation
+// Gemini 1.5 Pro for recipe generation with system instruction
 export const recipeModel = genAI.getGenerativeModel({
   model: 'gemini-1.5-pro',
+  systemInstruction: RECIPE_SYSTEM_PROMPT,
   generationConfig: {
     temperature: 0.9,
     topP: 0.95,

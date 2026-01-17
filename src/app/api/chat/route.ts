@@ -1,6 +1,5 @@
 import { NextRequest } from 'next/server';
 import { streamChat, ChatMessage, extractJSON } from '@/lib/gemini/client';
-import { RECIPE_SYSTEM_PROMPT } from '@/lib/gemini/prompts';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -13,15 +12,6 @@ export async function POST(request: NextRequest) {
       return new Response('Invalid message', { status: 400 });
     }
 
-    // Prepare history with system prompt
-    const fullHistory: ChatMessage[] = [
-      {
-        role: 'assistant',
-        content: RECIPE_SYSTEM_PROMPT,
-      },
-      ...history,
-    ];
-
     // Create a readable stream
     const encoder = new TextEncoder();
     const stream = new ReadableStream({
@@ -29,7 +19,8 @@ export async function POST(request: NextRequest) {
         try {
           let fullResponse = '';
 
-          for await (const chunk of streamChat(message, fullHistory)) {
+          // System prompt is now in the model's systemInstruction
+          for await (const chunk of streamChat(message, history)) {
             fullResponse += chunk;
 
             // Send the chunk to the client
