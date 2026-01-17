@@ -7,10 +7,10 @@ if (!process.env.GEMINI_API_KEY) {
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-// Gemini 1.5 Pro for recipe generation with system instruction
+// Gemini Pro for recipe generation
+// Note: systemInstruction not supported in v1beta, will prepend to first message instead
 export const recipeModel = genAI.getGenerativeModel({
-  model: 'gemini-1.5-pro',
-  systemInstruction: RECIPE_SYSTEM_PROMPT,
+  model: 'gemini-pro',
   generationConfig: {
     temperature: 0.9,
     topP: 0.95,
@@ -20,7 +20,7 @@ export const recipeModel = genAI.getGenerativeModel({
 
 // Gemini 1.5 Flash for quick tasks
 export const flashModel = genAI.getGenerativeModel({
-  model: 'gemini-1.5-flash',
+  model: 'gemini-pro',
   generationConfig: {
     temperature: 0.7,
     topP: 0.9,
@@ -56,7 +56,12 @@ export async function* streamChat(
 ): AsyncGenerator<string> {
   const chat = await startChatSession(history);
 
-  const result = await chat.sendMessageStream(message);
+  // Prepend system prompt to first message if no history
+  const finalMessage = history.length === 0
+    ? `${RECIPE_SYSTEM_PROMPT}\n\nUser: ${message}`
+    : message;
+
+  const result = await chat.sendMessageStream(finalMessage);
 
   for await (const chunk of result.stream) {
     const text = chunk.text();
